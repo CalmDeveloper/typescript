@@ -122,57 +122,57 @@ function App() {
  // const ddd= user1.name
 
 
-
-  interface IShapeActions {
-    area:()=>number,
-    perimetr:()=>number
-  }
-
-  interface Isss{
-    hhh:(a:string,b:string)=>void
-  }
-  class Triangle implements Isss,IShapeActions{
-
-    constructor(private a:number,private b:number,private c:number) {
-    }
-
-    area(): number {
-      return this.a*this.b*this.c
-    }
-
-    hhh(a: string, b: string): void {
-    console.log(a+b)
-    }
-
-    perimetr(): number {
-     return  this.a+this.b+this.c
-    }
-
-  }
-  class Rectangle implements IShapeActions {
-    constructor(private a: number, private b: number) {
-    }
-
-    area(): number {
-        return this.a * this.b
-    }
-
-    perimeter(): number {
-        return this.a + this.b
-    }
-
-    perimetr(): number {
-      return this.a + this.b
-    }
-
-
-}
-  const shapes: IShapeActions[] = [new Triangle(1, 2, 3), new Rectangle(2, 7), new Triangle(1, 5, 8)]
-  for (let shape of shapes) {
-    console.log(shape.area());
-    console.log(shape.perimetr());
-}
-let rectangle = new Rectangle(2, 7);
+//
+//   interface IShapeActions {
+//     area:()=>number,
+//     perimetr:()=>number
+//   }
+//
+//   interface Isss{
+//     hhh:(a:string,b:string)=>void
+//   }
+//   class Triangle implements Isss,IShapeActions{
+//
+//     constructor(private a:number,private b:number,private c:number) {
+//     }
+//
+//     area(): number {
+//       return this.a*this.b*this.c
+//     }
+//
+//     hhh(a: string, b: string): void {
+//     console.log(a+b)
+//     }
+//
+//     perimetr(): number {
+//      return  this.a+this.b+this.c
+//     }
+//
+//   }
+//   class Rectangle implements IShapeActions {
+//     constructor(private a: number, private b: number) {
+//     }
+//
+//     area(): number {
+//         return this.a * this.b
+//     }
+//
+//     perimeter(): number {
+//         return this.a + this.b
+//     }
+//
+//     perimetr(): number {
+//       return this.a + this.b
+//     }
+//
+//
+// }
+//   const shapes: IShapeActions[] = [new Triangle(1, 2, 3), new Rectangle(2, 7), new Triangle(1, 5, 8)]
+//   for (let shape of shapes) {
+//     console.log(shape.area());
+//     console.log(shape.perimetr());
+// }
+// let rectangle = new Rectangle(2, 7);
 
 
   return (
