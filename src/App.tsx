@@ -1,178 +1,137 @@
 import React from 'react';
-
-
-
+import {createInterface} from "readline";
 function App() {
-  // const show=(arr:string[])=>{
-  //   arr[0]=''
-  // }
-  // const show=(a:number, b:number):void=>{
-  //   a+b
-  // }
-  // const show=(a:number, b:number)=>{
-  //  return  a+b
-  // }
-  // const show=(a:number, b:number):number | string=>{
-  //  return  a+b
-  // }
-
-  // const user = {name:'max', age:10}
-  // const showUser = (user:{name:string,age:number}) => {
-  // }
-// const user:{name:string,age:number}= {age:42,name:'vfvf'}
-
-  // tsc.app.ts cimpilator
-
-  // interface IUser{
-  //   id:number,
-  //   name: string,
-  //   age:number
-  // }
-  // const user:IUser={id:20, age:42,name:'vfvf'}
-
-  // interface IUser{
-  //   id:number,
-  //   name: string,
-  //   age:number,
-  //   address:{
-  //     street:string,
-  //     house:number
-  //   }
-  // }
-  // const user: IUser={id:20, age:42,name:'vfvf',address:{street:'vdvd',house:5}}
-
-
-
-//   interface IUser{
-//     id:number,
-//     name: string,
-//     age:number,
-// addres:IAdress
+//   1) создать интерфейс на основе этого объекта:
+//
+//   {
+//     "mission_name": "Starlink-15 (v1.0)",
+//       "launch_date_local": "2020-10-24T11:31:00-04:00",
+//       "launch_site": {
+//     "site_name_long": "Cape Canaveral Air Force Station Space Launch Complex 40"
+//   },
+//     "links": {
+//     "article_link": null,
+//         "video_link": "https://youtu.be/J442-ti-Dhg"
+//   },
+//     "rocket": {
+//     "rocket_name": "Falcon 9",
+//         "first_stage": {
+//       "cores": [
+//         {
+//           "flight": 7,
+//           "core": {
+//             "reuse_count": 6,
+//             "status": "unknown"
+//           }
+//         }
+//       ]
+//     },
+//     "second_stage": {
+//       "payloads": [
+//         {
+//           "payload_type": "Satellite",
+//           "payload_mass_kg": 15400,
+//           "payload_mass_lbs": 33951.2
+//         }
+//       ]
 //     }
-//
-// interface IAdress {
-//       street?:string,
-//       house:number
-// }
-//
-//   const user:IUser={id:20, age:42,name:'vfvf',addres :{street:'vdvd',house:5}}
-
-
-//
-//   type UniqeId=number
-//     interface IUser<T>{
-//     id:UniqeId,
-//     name: string,
-//     age:number,
-// addres:IAdress
-//       arr:T[]
-//     }
-//
-// interface IAdress {
-//       street?:string,
-//       house:number
-// }
-//
-//   const user:IUser<number>={id:20, age:42,name:'vfvf',addres :{street:'vdvd',house:5},arr:[1]}
-
-
-  //
-  // type StateType = [string,(a:number,b:number)=>number]
-  // const useSate:StateType=['text',(a,b)=>{return a+b}]
-  //
-  // let [first,second] = useSate
-  // console.log(first)
-  // console.log(second)
-// node app.js  start
-
-
-
-// class User {
-//     id?:number;
-//     name:string;
-//     age:number;
-//
-//   constructor(id: number, name: string, age: number) {
-//     this.id = id;
-//     this.name = name;
-//     this.age = age;
 //   }
-// }
+//   }
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+//   interface IPayLoad {
+//     payload_type: string,
+//     payload_mass_kg: number,
+//     payload_mass_lbs: number
+//   }
+//   interface Icores {
+//     flight: number,
+//     core: {
+//       reuse_count: number,
+//       status: string
+//     }
+//   }
+//   interface IStarLink {
+//     mission_name: string,
+//     launch_date_local: string,
+//     launch_site: {
+//       site_name_long: string
+//       links: {
+//         article_link: string,
+//         video_link: string
+//       },
+//       rocket: {
+//         rocket_name: string,
+//         first_stage: {
+//           cores: Icores[]
+//         },
+//         second_stage: {
+//           payloads: IPayLoad[]
+//         }
+//       }
+//     }
+//   }
+//   ---------------------------------------------------------------------------—————————
+// 2) протипизировать функции:
 //
-// const user:User={age:20,id:10,name:'tar'}
-
-
-  // class User {
-  //   constructor( private id: number, private name: string,public age: number) {
-  //     this.id = id;
-  //     this.name = name;
-  //     this.age = age;
-  //
-  //   }
-  //   getId():number{
-  //     return this.id as number
-  //   }
-  //   setId(newid:number):void{
-  //     this.id=newid
-  //   }
-  // }
-
-  // const user:User={age:20,id:10,name:'tar'}
-// const user1:User={age:1,id:12,name:'ts'}
- // const ddd= user1.name
-
-
+//       const user = {
+//         name:"Max",
+//         age:18,
+//         gender:'male'
+//       }
 //
-//   interface IShapeActions {
-//     area:()=>number,
-//     perimetr:()=>number
+//   function sum(a,b){
+//     return a+b
+//   }
+//   function showSum(a,b){
+//     console.log(a + b);
 //   }
 //
-//   interface Isss{
-//     hhh:(a:string,b:string)=>void
+//   function incAge(someUser, inc){
+//     someUser.age+=inc
+//     return someUser
 //   }
-//   class Triangle implements Isss,IShapeActions{
 //
-//     constructor(private a:number,private b:number,private c:number) {
-//     }
+//   console.log(sum(1, 2));
+//   showSum(2,3)
+//   incAge(user, 2)
 //
-//     area(): number {
-//       return this.a*this.b*this.c
-//     }
-//
-//     hhh(a: string, b: string): void {
-//     console.log(a+b)
-//     }
-//
-//     perimetr(): number {
-//      return  this.a+this.b+this.c
-//     }
-//
-//   }
-//   class Rectangle implements IShapeActions {
-//     constructor(private a: number, private b: number) {
-//     }
-//
-//     area(): number {
-//         return this.a * this.b
-//     }
-//
-//     perimeter(): number {
-//         return this.a + this.b
-//     }
-//
-//     perimetr(): number {
-//       return this.a + this.b
-//     }
-//
-//
-// }
-//   const shapes: IShapeActions[] = [new Triangle(1, 2, 3), new Rectangle(2, 7), new Triangle(1, 5, 8)]
-//   for (let shape of shapes) {
-//     console.log(shape.area());
-//     console.log(shape.perimetr());
-// }
-// let rectangle = new Rectangle(2, 7);
+/////////////////////////////////////////////////////////////////////////////
+
+
+  interface IUser {
+    name: string,
+    age: number,
+    gender: string
+  }
+
+  const user: IUser = {
+    name: "Max",
+    age: 18,
+    gender: 'male'
+  }
+
+
+
+  function sum(a:number,b:number):number{
+    return a+b
+  }
+  function showSum(a:number,b:number):void{
+    console.log(a + b);
+  }
+
+  function incAge(someUser:IUser, inc:number){
+    someUser.age+=inc
+
+    return someUser
+  }
+
+  console.log(sum(1, 2));
+  showSum(2,3)
+  incAge(user, 2)
+
+
+
 
 
   return (
