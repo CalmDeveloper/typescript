@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {Users} from "./components";
 
 
 
-function App() {
+const App:FC=()=> {
 
   return (
     <div>
-
+<Users/>
     </div>
   );
 }
