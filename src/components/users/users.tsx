@@ -10,7 +10,7 @@ const Users:FC = () => {
     },[])
     return (
         <div>
-            {users.map(user => <User user={user} key={user.id}/>)}
+               {users.map(user => <User user={user} key={user.id}/>)}
         </div>
     );
 };
